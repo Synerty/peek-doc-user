@@ -1,0 +1,69 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+#Ignore the automatically generated files
+.lastHash
+**/peek_core_*
+**/peek_plugin_*
+**/dist/
+
+**/plugin_toc.rst
+**/plugin_api_conf.py
+**/plugin_api_list.txt
+**/dist-build
+**/api_autodoc
+
+
+
+# Ignore python compiled files
+*.pyc
+__pycache__
+
+# Nativescript stuff
+npm-debug.log
+.DS_Store
+
+# Ignore pycharm project settings
+.idea
+
+dist/
+build/
+*.egg-info/
+
+# compiled output
+dist
+/tmp
+
+# Ignore compiled python files
+__pycache__/
+
+# dependencies
+node_modules
+/bower_components
+
+# IDEs and editors
+/.vscode
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db
+.idea
+
+MANIFEST
