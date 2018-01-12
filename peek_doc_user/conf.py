@@ -338,7 +338,7 @@ def createApiDocs(modFileName):
     moduleName = os.path.basename(os.path.dirname(modFileName))
 
     rootpath = path.abspath(path.dirname(modFileName))
-    realDstDir = os.path.join(os.path.dirname(__file__), "api_autodoc", moduleName)
+    realDstDir = os.path.join(os.path.dirname(__file__), moduleName + "_api")
 
     tmpDir = Directory()
 

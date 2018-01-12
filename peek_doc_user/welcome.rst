@@ -1,5 +1,6 @@
 .. _welcome_to_peek_user_documentation:
 
+----------------------------------
 Welcome to Peek User Documentation
 ----------------------------------
 
