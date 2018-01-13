@@ -1,16 +1,10 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 #Ignore the automatically generated files
-.lastHash
-**/peek_core_*
-**/peek_plugin_*
 **/dist/
 
-**/plugin_toc.rst
-**/plugin_api_conf.py
-**/plugin_api_list.txt
-**/dist-build
-**/api_autodoc
+**/doc_dist
+**/doc_link
 
 
 

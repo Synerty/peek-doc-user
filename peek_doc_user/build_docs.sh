@@ -14,7 +14,7 @@ export PATH="$(dirname `echo 'which python' | bash -l`):$PATH"
 path=`dirname $0`
 cd $path
 
-ARGS=" . ./dist-build/doc_autobuild"
+ARGS=" $path $path/doc_dist"
 
 echo "Running sphinx-autobuild with args :"
 echo "$ARGS"

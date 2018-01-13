@@ -14,9 +14,13 @@ export PATH="$(dirname `echo 'which python' | bash -l`):$PATH"
 path=`dirname $0`
 cd $path
 
-pwd
+SRC_DIR="$path"
+OUT_DIR="$path/doc_dist"
+LINK_DIR="$path/doc_link"
 
+rm -rf ${OUT_DIR}
 
+# This function gets the path of any python packages we're watching
 function modPath() {
 python <<EOPY
 import os.path as p
@@ -29,19 +33,24 @@ print(dir)
 EOPY
 }
 
-ARGS=" . ./dist-build/doc_autobuild"
-
-for x in `cat $path/plugin_api_list.txt`
-do
-    ARGS="$ARGS `modPath $x`"
-done
-
-echo "Running sphinx-autobuild with args :"
-echo "$ARGS"
+ARGS=""
 
 # Run the command
 ARGS="$ARGS -H 0.0.0.0"
 ARGS="$ARGS -p 8020"
-ARGS="$ARGS --watch"
+ARGS="$ARGS --watch ${LINK_DIR}"
+
+# Add in any API docs
+for x in `cat $path/doc_link/plugin_api_list.txt`
+do
+    ARGS="$ARGS --watch `modPath $x`"
+done
+
+# Add the source and dest paths
+ARGS="$ARGS ${SRC_DIR} ${OUT_DIR}"
+
+echo "Running sphinx-autobuild with args :"
+echo "$ARGS"
+
 sphinx-autobuild $ARGS
 

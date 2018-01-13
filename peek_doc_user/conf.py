@@ -338,7 +338,7 @@ def createApiDocs(modFileName):
     moduleName = os.path.basename(os.path.dirname(modFileName))
 
     rootpath = path.abspath(path.dirname(modFileName))
-    realDstDir = os.path.join(os.path.dirname(__file__), moduleName + "_api")
+    realDstDir = os.path.join(os.path.dirname(__file__), 'doc_link', moduleName + "_api")
 
     tmpDir = Directory()
 
@@ -359,6 +359,6 @@ def createApiDocs(modFileName):
 # End apidoc hack
 ###############################################################################
 
-from peek_doc_user import plugin_api_conf
+from peek_doc_user.doc_link import plugin_api_conf
 
 plugin_api_conf.load(createApiDocs)
