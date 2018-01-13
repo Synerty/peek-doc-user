@@ -14,7 +14,14 @@ export PATH="$(dirname `echo 'which python' | bash -l`):$PATH"
 path=`dirname $0`
 cd $path
 
-ARGS=" $path $path/doc_dist"
+SRC_DIR="$path"
+OUT_DIR="$path/doc_dist"
+LINK_DIR="$path/doc_link"
+
+rm -rf ${OUT_DIR}
+
+# Add the source and dest paths
+ARGS=" ${SRC_DIR} ${OUT_DIR}"
 
 echo "Running sphinx-autobuild with args :"
 echo "$ARGS"
