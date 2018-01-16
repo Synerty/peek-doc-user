@@ -30,7 +30,7 @@ sed -i "s;^package_version.*=.*;package_version = '${VER}';"  setup.py
 
 # Update the package version
 sed -i "s;.*version.*;__version__ = '${VER}';" ${PACKAGE}/__init__.py
-sed -i "s;.*version.*;__version__ = '${VER}';" ${PACKAGE}/base/conf.py
+sed -i "s;.*version.*;__version__ = '${VER}';" ${PACKAGE}/conf.py
 
 
 # Upload to test pypi
