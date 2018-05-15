@@ -160,7 +160,10 @@ texinfo_documents = [
 # Begin apidoc hack
 ###############################################################################
 
+import os
 import shutil
+
+os.__unused = False
 
 import sphinx
 from pytmpdir.Directory import Directory
@@ -337,7 +340,7 @@ sphinx.apidoc.is_excluded = is_excluded
 def createApiDocs(modFileName):
     moduleName = os.path.basename(os.path.dirname(modFileName))
 
-    rootpath = path.abspath(path.dirname(modFileName))
+    rootpath = os.path.abspath(os.path.dirname(modFileName))
     realDstDir = os.path.join(os.path.dirname(__file__), 'doc_link', moduleName + "_api")
 
     tmpDir = Directory()
@@ -348,7 +351,7 @@ def createApiDocs(modFileName):
     if not os.path.isdir(opts.destdir):
         os.makedirs(opts.destdir)
 
-    modules = recurse_tree(rootpath, [], opts)
+    # modules = recurse_tree(rootpath, [], opts)
     # create_modules_toc_file(modules, opts)
 
     # Incrementally update files
