@@ -17,7 +17,8 @@ if os.path.isdir(egg_info):
 if os.path.isfile('MANIFEST'):
     os.remove('MANIFEST')
 
-excludePathContains = ('__pycache__', 'node_modules', 'platforms', 'dist')
+excludePathContains = ('__pycache__', 'node_modules', 'platforms', 'dist',
+                       'doc_link','doc_dist', 'doc_dist_latex')
 excludeFilesEndWith = ('.pyc', '.js', '.js.map', '.lastHash')
 excludeFilesStartWith = ('peek_plugin',)
 
