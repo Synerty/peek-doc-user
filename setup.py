@@ -18,7 +18,7 @@ if os.path.isfile('MANIFEST'):
     os.remove('MANIFEST')
 
 excludePathContains = ('__pycache__', 'node_modules', 'platforms', 'dist',
-                       'doc_link','doc_dist', 'doc_dist_latex')
+                       'doc_link', 'doc_dist', 'doc_dist_latex')
 excludeFilesEndWith = ('.pyc', '.js', '.js.map', '.lastHash')
 excludeFilesStartWith = ('peek_plugin',)
 
@@ -45,14 +45,22 @@ def find_package_files():
 
     return paths
 
+
 package_files = find_package_files()
+
+requirements = [
+    "Sphinx",
+    "sphinx-autobuild",
+    "sphinx-rtd-theme"
+]
 
 setup(
     name=pip_package_name,
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     package_data={'': package_files},
-    install_requires=[],
-    zip_safe=False,version=package_version,
+    install_requires=requirements,
+    zip_safe=False,
+    version=package_version,
     description='Peek Platform - User Documentation (Frontend)',
     author='Synerty',
     author_email='contact@synerty.com',
