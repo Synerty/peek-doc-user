@@ -145,7 +145,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, __project__, title,
-     author, __project__, 'Pluggable platform for Python.',
+     author, __project__, 'Enterprise Extensible Python Platform.',
      'Miscellaneous'),
 ]
 
@@ -272,7 +272,7 @@ def create_module_file(package, module, opts):
 
 
 def create_package_file(root, master_package, subroot, py_files, opts, subs,
-                        is_namespace, excludes=[]):
+                        is_namespace, excludes=[], *args, **kwargs):
     """Build the text of the file and write the file."""
 
     text = '.. _%s:\n\n' % makename(master_package, subroot)
