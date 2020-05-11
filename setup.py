@@ -49,7 +49,7 @@ def find_package_files():
 package_files = find_package_files()
 
 requirements = [
-    "Sphinx",
+    "sphinx",
     "sphinx-autobuild",
     "sphinx-rtd-theme"
 ]
